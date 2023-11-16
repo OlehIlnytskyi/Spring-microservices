@@ -25,6 +25,6 @@ public class Machine {
     private MilitaryMachineType type;
     private String model;
     private LocalDate creationDate;
-    private LocalDate expirationDat;
+    private LocalDate expirationDate;
     private int count;
 }

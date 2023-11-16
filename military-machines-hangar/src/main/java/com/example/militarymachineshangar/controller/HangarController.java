@@ -34,13 +34,13 @@ public class HangarController {
     }
 
     @PostMapping("/addMachine")
-    public void addMachine(@RequestBody Machine machine, @RequestParam long count) {
-        hangarService.addMachine(machine, count);
+    public void addMachine(@RequestBody Machine machine) {
+        hangarService.addMachine(machine);
     }
 
     @PutMapping("/editMachine")
-    public void editMachine(@RequestParam long id, @RequestBody Machine machine) {
-        hangarService.editMachine(id, machine);
+    public void editMachine(@RequestBody Machine machine) {
+        hangarService.editMachine(machine);
     }
 
     @DeleteMapping("removeMachine")

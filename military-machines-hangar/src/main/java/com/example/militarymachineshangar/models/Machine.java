@@ -1,6 +1,7 @@
 package com.example.militarymachineshangar.models;
 
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,10 +13,18 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+
+@Entity
+@Table(name = "military-vehicles")
 public class Machine {
+
+    @Id
     private long id;
+
+    @Enumerated(EnumType.STRING)
     private MilitaryMachineType type;
     private String model;
     private LocalDate creationDate;
     private LocalDate expirationDat;
+    private int count;
 }

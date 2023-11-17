@@ -40,7 +40,7 @@ public class OrdersController {
         ordersService.edit(order);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/remove")
     public void removeById(@RequestParam long id) {
         ordersService.removeById(id);
     }

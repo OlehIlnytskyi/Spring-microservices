@@ -18,42 +18,7 @@ public class HangarService {
 
     private boolean isDataInserted;
 
-    public Catalog<Machine> getAllMachines() {
-        return new Catalog<>(hangarRepository.findAll());
-    }
-
-    public Optional<Machine> getMachine(long id) {
-            return hangarRepository.findById(id);
-    }
-
-    public void addMachine(Machine machine) {
-        hangarRepository.save(machine);
-    }
-
-    public void editMachine(Machine newMachineData) {
-        Machine machine = getMachine(newMachineData.getId()).orElseThrow();
-
-        hangarRepository.save(newMachineData);
-    }
-
-    public void removeMachine(long id, int count) {
-        Machine machine = getMachine(id).orElseThrow();
-        int currentCount = machine.getCount();
-
-        if (currentCount < count){
-            // Замало
-        }
-
-        if (currentCount == count){
-            hangarRepository.deleteById(id);
-            return;
-        }
-
-        machine.setCount(currentCount - count);
-        editMachine(machine);
-    }
-
-    public String insertData() {
+    public String initValues() {
         if (isDataInserted) return "Data is already inserted!";
 
         hangarRepository.save(new Machine(1, MilitaryMachineType.COMBAT_WHEELED_VEHICLES, "BMP-2", LocalDate.of(1980, 4, 12), LocalDate.of(2025, 4, 12), 200));
@@ -64,5 +29,50 @@ public class HangarService {
         isDataInserted = true;
 
         return "Data successfully inserted!";
+    }
+
+    public Catalog<Machine> getAll() {
+        return new Catalog<>(hangarRepository.findAll());
+    }
+
+    public Optional<Machine> get(long id) {
+            return hangarRepository.findById(id);
+    }
+
+    public void add(Machine machine) {
+        hangarRepository.save(machine);
+    }
+
+    public void edit(Machine newMachineData) {
+
+        // Check: machine with same id is present
+        get(newMachineData.getId()).orElseThrow();
+
+        // Result: editing data
+        hangarRepository.save(newMachineData);
+    }
+
+    public void remove(long id, int count) {
+
+        // Check: machine with selected id is present
+        // Get: machine to edit (REMOVE)
+        Machine machine = get(id).orElseThrow();
+
+        int currentCount = machine.getCount();
+
+        // Check: hangar has enough machines
+        if (currentCount < count){
+            return;
+        }
+
+        // Check: client ordered all machines from hangar
+        if (currentCount == count){
+            hangarRepository.deleteById(id);
+            return;
+        }
+
+        // Result: removing selected count of machines
+        machine.setCount(currentCount - count);
+        edit(machine);
     }
 }

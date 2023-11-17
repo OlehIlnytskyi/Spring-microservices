@@ -18,33 +18,33 @@ public class HangarController {
     @Autowired
     private HangarService hangarService;
 
-    @GetMapping("/insertData")
-    public String insertData() {
-        return hangarService.insertData();
+    @GetMapping("/initValues")
+    public String initValues() {
+        return hangarService.initValues();
     }
 
-    @GetMapping("/getAllMachines")
-    public Catalog<Machine> getAllMachines() {
-        return hangarService.getAllMachines();
+    @GetMapping("/getAll")
+    public Catalog<Machine> getAll() {
+        return hangarService.getAll();
     }
 
-    @GetMapping("/getMachine")
-    public Optional<Machine> getMachine(@RequestParam long id){
-        return hangarService.getMachine(id);
+    @GetMapping("/get")
+    public Optional<Machine> get(@RequestParam long id){
+        return hangarService.get(id);
     }
 
-    @PostMapping("/addMachine")
-    public void addMachine(@RequestBody Machine machine) {
-        hangarService.addMachine(machine);
+    @PostMapping("/add")
+    public void add(@RequestBody Machine machine) {
+        hangarService.add(machine);
     }
 
-    @PutMapping("/editMachine")
-    public void editMachine(@RequestBody Machine machine) {
-        hangarService.editMachine(machine);
+    @PutMapping("/edit")
+    public void edit(@RequestBody Machine machine) {
+        hangarService.edit(machine);
     }
 
-    @DeleteMapping("removeMachine")
-    public void removeMachine(@RequestParam long id, @RequestParam int count) {
-        hangarService.removeMachine(id, count);
+    @DeleteMapping("/remove")
+    public void removeById(@RequestParam long id, @RequestParam int count) {
+        hangarService.remove(id, count);
     }
 }

@@ -13,7 +13,6 @@ Technologies that was used:
  - 
 
 Things to do:
-  - add Banners
   - fully implementation of Hangar
   - fully implementation of Orders
   - create better DB schema (with relationships)

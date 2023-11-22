@@ -8,6 +8,7 @@ class MilitaryMachinesHangarApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

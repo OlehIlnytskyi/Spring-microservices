@@ -1,14 +1,11 @@
 package com.example.militarymachineshangar.controller;
 
 import com.example.militarymachineshangar.models.Catalog;
-import com.example.militarymachineshangar.models.Machine;
-import com.example.militarymachineshangar.models.MilitaryMachineType;
+import com.example.militarymachineshangar.models.jpa.Machine;
 import com.example.militarymachineshangar.service.HangarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController

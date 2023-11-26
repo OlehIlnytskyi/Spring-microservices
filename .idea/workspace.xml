@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="" />
+    <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/military-machines-hangar/src/main/java/com/example/militarymachineshangar/repository/HangarRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/military-machines-hangar/src/main/java/com/example/militarymachineshangar/repository/MachineModelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/military-machines-hangar/src/main/java/com/example/militarymachineshangar/models/jpa/Hangar.java" beforeDir="false" afterPath="$PROJECT_DIR$/military-machines-hangar/src/main/java/com/example/militarymachineshangar/models/jpa/Hangar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/military-machines-hangar/src/main/java/com/example/militarymachineshangar/models/jpa/MachineModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/military-machines-hangar/src/main/java/com/example/militarymachineshangar/models/jpa/MachineModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/military-machines-hangar/src/test/java/com/example/militarymachineshangar/repository/MachineRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/military-machines-hangar/src/test/java/com/example/militarymachineshangar/repository/MachineRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/military-machines-hangar/src/test/java/com/example/militarymachineshangar/repository/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/military-machines-hangar/src/test/java/com/example/militarymachineshangar/repository/TestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/military-machines-hangar/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/military-machines-hangar/src/test/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,13 +26,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/military-machines-hangar"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/military-machines-hangar&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

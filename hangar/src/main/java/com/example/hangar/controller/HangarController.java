@@ -34,9 +34,9 @@ public class HangarController {
         return hangarService.getAll();
     }
 
-    @DeleteMapping("/deleteById")
+    @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void deleteById(@RequestParam Long machineId) {
+    public void delete(@RequestParam Long machineId) {
         hangarService.deleteById(machineId);
     }
 }

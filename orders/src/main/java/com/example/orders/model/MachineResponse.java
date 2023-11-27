@@ -11,7 +11,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OrderItemRequest {
-
-    private Long machineId;
+public class MachineResponse {
+    private Long id;
+    private MachineType type;
+    private String model;
+    private BigDecimal price;
 }

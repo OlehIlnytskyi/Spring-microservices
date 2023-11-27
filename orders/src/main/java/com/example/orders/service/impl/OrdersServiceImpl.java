@@ -5,6 +5,7 @@ import com.example.orders.service.OrdersService;
 import com.example.orders.service.repository.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -15,12 +16,20 @@ public class OrdersServiceImpl implements OrdersService {
     @Autowired
     private OrdersRepository ordersRepository;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     @Override
     public void post(OrderRequest orderRequest) {
 
         List<OrderItem> orderItems = orderRequest.getOrderItemRequests().stream()
                 .map(this::mapToBase)
                 .toList();
+
+        orderItems.forEach(orderItem -> orderItem.setPrice(
+                restTemplate.getForObject("http://hangar/hangar/get?machineId=" + orderItem.getMachineId(), MachineResponse.class)
+                        .getPrice()
+        ));
 
         Order order = Order.builder()
                 .customer_id(orderRequest.getCustomerId())
@@ -62,7 +71,6 @@ public class OrdersServiceImpl implements OrdersService {
     private OrderItem mapToBase(OrderItemRequest orderItemRequest) {
         return OrderItem.builder()
                 .machineId(orderItemRequest.getMachineId())
-                .price(orderItemRequest.getPrice())
                 .build();
     }
 

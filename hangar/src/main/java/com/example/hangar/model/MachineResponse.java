@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 @Builder
 public class MachineResponse {
     private Long id;
-
     private MachineType type;
     private String model;
     private BigDecimal price;

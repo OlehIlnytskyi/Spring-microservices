@@ -36,7 +36,7 @@ public class OrdersController {
 
     @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void delete(@RequestParam Long machineId) {
-        ordersService.delete(machineId);
+    public void delete(@RequestParam Long orderId) {
+        ordersService.delete(orderId);
     }
 }

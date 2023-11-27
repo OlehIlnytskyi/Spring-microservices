@@ -45,7 +45,7 @@ public class OrdersServiceImpl implements OrdersService {
     @Override
     public OrderResponse get(Long orderId) {
         Order order = ordersRepository.findById(orderId)
-                .orElseThrow();
+                .orElseThrow(() -> new IllegalArgumentException("Order with id " + orderId + " is missing."));
 
         return OrderResponse.builder()
                 .id(order.getId())

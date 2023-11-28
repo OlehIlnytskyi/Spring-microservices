@@ -29,8 +29,8 @@ I developed this project to explore and implement new technologies within Spring
 
 # How to Install the project
 
-1. You need to have a (database server)[] installed and running. In my case i used **Postgres**.
-2. You need to have (Maven)[] installed.
+1. You need a [database server](https://phoenixnap.com/kb/what-is-a-database-server) installed and running. In my case i used **Postgres**.
+2. You need a [Maven](https://maven.apache.org/download.cgi) installed.
 3. Clone this GitHub repository to your local machine.
 4. Open this project and wait for Maven to download all needed dependencies.
 
@@ -145,7 +145,167 @@ That is all! We have just described the code above and how it works!
 
 ## Getting deeper
 
-Тут вже перейти до Постмана
+Let's switch to [Postman](https://www.postman.com/downloads/). **Postman** is the application that we can use to communicate with our API in a very convenient and fast way.
+
+### Communicating with Hangar application API
+
+
+**Add new Machine (POST method)**
+
+Code implementation:
+
+```java
+    @PostMapping("/post")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void post(@RequestBody MachineRequest machineRequest) {
+        hangarService.post(machineRequest);
+    }
+```
+
+
+> Note that we also need to provide **body** for **MachineRequest** class.
+
+
+Postman request:
+
+![](media/postman_post_machine.png)
+
+
+**Get all Machines (GET method)**
+
+Code implementation:
+
+```java
+    @GetMapping("/getAll")
+    @ResponseStatus(HttpStatus.OK)
+    public List<MachineResponse> getAll() {
+        return hangarService.getAll();
+    }
+```
+
+
+Postman request:
+
+![](media/postman_get_all_machine.png)
+
+
+**Get Machine by Id (GET method)**
+
+Code implementation:
+
+```java
+    @GetMapping("/get")
+    @ResponseStatus(HttpStatus.FOUND)
+    public MachineResponse get(@RequestParam Long machineId) {
+        return hangarService.get(machineId);
+    }
+```
+
+> Note that we also need to provide **machineId** parameter.
+
+
+Postman request:
+
+![](media/postman_get_by_id_machine.png)
+
+
+**Delete Machine (DELETE method)**
+
+Code implementation:
+
+```java
+    @DeleteMapping("/delete")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void delete(@RequestParam Long machineId) {
+        hangarService.deleteById(machineId);
+    }
+```
+
+
+Postman request:
+
+![](media/postman_delete_machine.png)
+
+
+
+### Communicating with Orders application API
+
+
+**Add new Order (POST method)**
+
+Code implementation:
+
+```java
+    @PostMapping("/post")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void post(@RequestBody OrderRequest orderRequest) {
+        ordersService.post(orderRequest);
+    }
+```
+
+
+> Note that we also need to provide **body** for **OrderRequest** class.
+
+
+Postman request:
+
+![](media/postman_post_orders.png)
+
+
+**Get all Orders (GET method)**
+
+Code implementation:
+
+```java
+    @GetMapping("/getAll")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OrderResponse> getAll() {
+        return ordersService.getAll();
+    }
+```
+
+
+Postman request:
+
+![](media/postman_get_all_orders.png)
+
+
+**Get Order by Id (GET method)**
+
+Code implementation:
+
+```java
+    @GetMapping("/get")
+    @ResponseStatus(HttpStatus.FOUND)
+    public OrderResponse get(@RequestParam Long orderId) {
+        return ordersService.get(orderId);
+    }
+```
+
+> Note that we also need to provide **orderId** parameter.
+
+
+Postman request:
+
+![](media/postman_get_by_id_orders.png)
+
+
+**Delete Order (DELETE method)**
+
+Code implementation:
+
+```java
+    @DeleteMapping("/delete")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void delete(@RequestParam Long orderId) {
+        ordersService.delete(orderId);
+    }
+```
+
+
+Postman request:
+
+![](media/postman_delete_orders.png)
 
 І придумати шо далі писати
 

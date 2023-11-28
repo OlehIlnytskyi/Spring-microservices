@@ -41,7 +41,7 @@ Congratulations, you have successfully installed project and ready to run it!
 
 Inside the project you will find three separate programs - one **Eureka server** and two **services**, namely **Hangar** and **Orders**.
 
-![](media/project_structure.png)
+<img src="media/project_structure.png" width=512 height=512>
 
 
 - **Hangar Service** - REST application that stores all machines, Eureka client.
@@ -65,7 +65,7 @@ As we can see, this database has only one table that stores all the Machines. As
 
 ![](media/orders_schema.png)
 
-Orders schema is a little more complicated. Here we have [unidirectional relationship](https://www.baeldung.com/spring-jpa-unidirectional-one-to-many-and-cascading-delete) between **Orders** and **OrderItem** tables. The third table !!! TableName !!! is created automatically by Hibernate.
+Orders schema is a little more complicated. Here we have [unidirectional relationship](https://www.baeldung.com/spring-jpa-unidirectional-one-to-many-and-cascading-delete) between **"Orders"** and **"OrderItem"** tables. The third table **"orders_order_items"** is created automatically by Hibernate.
 
 **Orders** table stores orders and can contain one or several **OrderItem** values. **OrderItem** contains machineId and the price of this **Machine**. Therefore it's the relationship [One to Many](https://www.baeldung.com/hibernate-one-to-many).
 
@@ -95,8 +95,55 @@ Now we're ready to send requests, or in other words communicate with our applica
 
 # Sending Requests
 
+Let's now send simple get request to application:
 
-Короче тут треба перше надіслати Get запрос через гугл
+![](media/get_all_machines_chrome)
+
+As we can see, request went through and application returned an empty list (because we haven't added some data yet).
+
+> Note that application is working on **localhost** with port **8081**.
+
+### How does it work?
+
+To understand how there requests work, we should take a look on implementation of this request:
+
+```java
+@RestController
+@RequestMapping("/hangar")
+public class HangarController {
+
+    @Autowired
+    private HangarService hangarService;
+
+
+    @GetMapping("/getAll")
+    @ResponseStatus(HttpStatus.OK)
+    public List<MachineResponse> getAll() {
+        return hangarService.getAll();
+    }
+
+   ...
+
+}
+```
+
+What do we see here?
+
+1. It's the **"Hangar"** application controller that handles **HangarApplication** [API](https://www.mulesoft.com/resources/api/what-is-an-api).
+2. Annotation **@RestController** is used to indicate that a class is a controller and that its methods should be treated as request handlers for RESTful web services.
+3. **@RequestMapping("/hangar")** indecates **path**:
+
+![](media/url_structure.png)
+
+4. **HangarService** - application logic. It is separated because we're using layered acrhitecture.
+5. **@GetMapping("/getAll")** - creates page **/getAll** with method **GET** inside the controller.
+6. **@ResponceStatus** - you dont actually need it right now, but if you want you can read [here](https://www.baeldung.com/spring-response-status) about it.
+
+
+That is all! We have just described the code above and how it works!
+
+
+## Getting deeper
 
 Тут вже перейти до Постмана
 

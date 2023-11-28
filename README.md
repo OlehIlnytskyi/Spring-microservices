@@ -41,7 +41,7 @@ Congratulations, you have successfully installed project and ready to run it!
 
 Inside the project you will find three separate programs - one **Eureka server** and two **services**, namely **Hangar** and **Orders**.
 
-![](src/resources/media/project_structure.png)
+![](media/project_structure.png)
 
 
 - **Hangar Service** - REST application that stores all machines, Eureka client.
@@ -57,13 +57,13 @@ Now, let's look closer at our databases:
 
 ### Hangar database schema
 
-![](src/resources/media/hangar_schema.png)
+![](media/hangar_schema.png)
 
 As we can see, this database has only one table that stores all the Machines. As simple as it can be.
 
 ### Orders database schema
 
-![](src/resources/media/orders_schema.png)
+![](media/orders_schema.png)
 
 Orders schema is a little more complicated. Here we have [unidirectional relationship](https://www.baeldung.com/spring-jpa-unidirectional-one-to-many-and-cascading-delete) between **Orders** and **OrderItem** tables. The third table !!! TableName !!! is created automatically by Hibernate.
 

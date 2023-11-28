@@ -1,4 +1,4 @@
-# Spring-cloud-microservices-military-hangar
+# Spring-microservices
 
 > This is a simple project that was created with a microservice architecture to learn and master the basic technologies when working with such an architecture.
 

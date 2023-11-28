@@ -171,6 +171,8 @@ Postman request:
 ![](media/postman_post_machine.png)
 
 
+
+
 **Get all Machines (GET method)**
 
 Code implementation:
@@ -187,6 +189,8 @@ Code implementation:
 Postman request:
 
 ![](media/postman_get_all_machine.png)
+
+
 
 
 **Get Machine by Id (GET method)**
@@ -209,6 +213,8 @@ Postman request:
 ![](media/postman_get_by_id_machine.png)
 
 
+
+
 **Delete Machine (DELETE method)**
 
 Code implementation:
@@ -225,6 +231,8 @@ Code implementation:
 Postman request:
 
 ![](media/postman_delete_machine.png)
+
+
 
 
 
@@ -252,6 +260,8 @@ Postman request:
 ![](media/postman_post_orders.png)
 
 
+
+
 **Get all Orders (GET method)**
 
 Code implementation:
@@ -268,6 +278,8 @@ Code implementation:
 Postman request:
 
 ![](media/postman_get_all_orders.png)
+
+
 
 
 **Get Order by Id (GET method)**
@@ -290,6 +302,8 @@ Postman request:
 ![](media/postman_get_by_id_orders.png)
 
 
+
+
 **Delete Order (DELETE method)**
 
 Code implementation:
@@ -307,6 +321,53 @@ Postman request:
 
 ![](media/postman_delete_orders.png)
 
-І придумати шо далі писати
 
-Не забути добавити фото!
+
+
+
+## Microservices communication
+
+I have only one used call between microservices at the moment:
+
+```java
+    @Override
+    public void post(OrderRequest orderRequest) {
+        ...
+
+        orderItems.forEach(orderItem -> orderItem.setPrice(
+                restTemplate.getForObject("http://hangar/hangar/get?machineId=" + orderItem.getMachineId(), MachineResponse.class)
+                        .getPrice()
+        ));
+
+        ...
+    }
+```
+
+As we can see, I implemented micorservices communication using **RestTemplate**. I know this is deprecated and we should be using **WebClient**, but i don't know reactive programming at the moment.
+
+Also, when working with **RestTemplate** dont forget to initialize it's **Bean** in **Configuration** class:
+
+```java
+@Configuration
+public class OrdersConfiguration {
+
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+}
+```
+
+
+
+## Conclusion
+
+I hope you found something new and useful here. I know i missed a lot of details, but if i explained everything here, this README would be much longer :)
+
+
+
+## Sources
+
+ - Old but gold [theoretical material](https://www.youtube.com/playlist?list=PLqq-6Pq4lTTZSKAFG6aCDVDP86Qx4lNas)
+ - [Practical material](https://www.youtube.com/playlist?list=PLSVW22jAG8pBnhAdq9S8BpLnZ0_jVBj0c)

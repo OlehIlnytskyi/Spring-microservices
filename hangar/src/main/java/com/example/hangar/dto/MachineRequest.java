@@ -1,5 +1,6 @@
-package com.example.orders.model;
+package com.example.hangar.dto;
 
+import com.example.hangar.model.MachineType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,8 +12,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MachineResponse {
-    private Long id;
+public class MachineRequest {
     private MachineType type;
     private String model;
     private BigDecimal price;

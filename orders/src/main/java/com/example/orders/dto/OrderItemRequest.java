@@ -1,4 +1,4 @@
-package com.example.orders.model;
+package com.example.orders.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

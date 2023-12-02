@@ -1,8 +1,13 @@
 package com.example.orders.service.impl;
 
+import com.example.orders.dto.MachineResponse;
+import com.example.orders.dto.OrderItemRequest;
+import com.example.orders.dto.OrderRequest;
+import com.example.orders.dto.OrderResponse;
 import com.example.orders.model.*;
 import com.example.orders.service.OrdersService;
-import com.example.orders.service.repository.OrdersRepository;
+import com.example.orders.repository.OrdersRepository;
+import com.example.orders.service.discovery.ServicesNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -26,8 +31,10 @@ public class OrdersServiceImpl implements OrdersService {
                 .map(this::mapToBase)
                 .toList();
 
+        String url = "http://" + ServicesNames.HANGAR_SERVICE + "/api/hangar/get?machineId=";
+
         orderItems.forEach(orderItem -> orderItem.setPrice(
-                restTemplate.getForObject("http://hangar/hangar/get?machineId=" + orderItem.getMachineId(), MachineResponse.class)
+                restTemplate.getForObject(url + orderItem.getMachineId(), MachineResponse.class)
                         .getPrice()
         ));
 

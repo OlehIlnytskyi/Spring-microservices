@@ -1,7 +1,7 @@
 package com.example.orders.controller;
 
-import com.example.orders.model.OrderRequest;
-import com.example.orders.model.OrderResponse;
+import com.example.orders.dto.OrderRequest;
+import com.example.orders.dto.OrderResponse;
 import com.example.orders.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("/api/orders")
 public class OrdersController {
 
     @Autowired

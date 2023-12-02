@@ -1,17 +1,14 @@
 package com.example.hangar.service.impl;
 
 import com.example.hangar.model.Machine;
-import com.example.hangar.model.MachineRequest;
-import com.example.hangar.model.MachineResponse;
+import com.example.hangar.dto.MachineRequest;
+import com.example.hangar.dto.MachineResponse;
 import com.example.hangar.repository.MachineRepository;
 import com.example.hangar.service.HangarService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 @Service
 public class HangarServiceImpl implements HangarService {

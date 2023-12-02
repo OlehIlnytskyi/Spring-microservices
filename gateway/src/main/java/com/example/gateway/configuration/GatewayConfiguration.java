@@ -14,14 +14,14 @@ public class GatewayConfiguration {
                 .route("hangar-service-route", r -> r
                         .path("/hangar/**")
                         .filters(f -> f
-                                .rewritePath("/hangar/(?<segment>.*)", "/hangar/${segment}"))
-                        .uri("lb://hangar"))
+                                .rewritePath("/hangar/(?<segment>.*)", "/api/hangar/${segment}"))
+                        .uri("lb://hangar-service"))
 
                 .route("orders-service-route", r -> r
                         .path("/orders/**")
                         .filters(f -> f
-                                .rewritePath("/orders/(?<segment>.*)", "/orders/${segment}"))
-                        .uri("lb://orders"))
+                                .rewritePath("/orders/(?<segment>.*)", "/api/orders/${segment}"))
+                        .uri("lb://orders-service"))
                 .build();
     }
 }

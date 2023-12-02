@@ -1,7 +1,7 @@
 package com.example.hangar.service;
 
-import com.example.hangar.model.MachineRequest;
-import com.example.hangar.model.MachineResponse;
+import com.example.hangar.dto.MachineRequest;
+import com.example.hangar.dto.MachineResponse;
 
 import java.util.List;
 

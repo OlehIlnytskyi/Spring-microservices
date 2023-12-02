@@ -1,7 +1,7 @@
 package com.example.hangar.controller;
 
-import com.example.hangar.model.MachineRequest;
-import com.example.hangar.model.MachineResponse;
+import com.example.hangar.dto.MachineRequest;
+import com.example.hangar.dto.MachineResponse;
 import com.example.hangar.service.HangarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/hangar")
+@RequestMapping("/api/hangar")
 public class HangarController {
 
     @Autowired

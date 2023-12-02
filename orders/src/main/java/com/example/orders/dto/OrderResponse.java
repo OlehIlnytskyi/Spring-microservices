@@ -1,5 +1,6 @@
-package com.example.orders.model;
+package com.example.orders.dto;
 
+import com.example.orders.model.OrderItem;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

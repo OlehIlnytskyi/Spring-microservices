@@ -1,11 +1,12 @@
 package com.example.security.service;
 
 import com.example.security.dto.UserRequest;
+import org.springframework.http.ResponseEntity;
 
 public interface SecurityService {
-    String register(UserRequest userRequest);
+    ResponseEntity<String> register(UserRequest userRequest);
 
-    String getToken(UserRequest userRequest);
+    ResponseEntity<String> getToken(UserRequest userRequest);
 
-    void checkToken(String token);
+    ResponseEntity<Void> checkToken(String token);
 }

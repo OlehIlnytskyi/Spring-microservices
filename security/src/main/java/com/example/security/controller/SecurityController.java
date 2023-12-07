@@ -3,6 +3,7 @@ package com.example.security.controller;
 import com.example.security.dto.UserRequest;
 import com.example.security.service.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,17 +14,17 @@ public class SecurityController {
     private SecurityService securityService;
 
     @GetMapping("/register")
-    public String register(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<String> register(@RequestBody UserRequest userRequest) {
         return securityService.register(userRequest);
     }
 
     @GetMapping("/getToken")
-    public String getToken(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<String> getToken(@RequestBody UserRequest userRequest) {
         return securityService.getToken(userRequest);
     }
 
     @GetMapping("/checkToken")
-    public void checkToken(@RequestHeader("Authorization") String token) {
-        securityService.checkToken(token);
+    public ResponseEntity<Void> checkToken(@RequestHeader("Authorization") String token) {
+        return securityService.checkToken(token);
     }
 }

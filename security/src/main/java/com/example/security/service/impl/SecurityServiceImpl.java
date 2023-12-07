@@ -5,7 +5,10 @@ import com.example.security.jwt.JwtUtils;
 import com.example.security.models.User;
 import com.example.security.repository.UserRepository;
 import com.example.security.service.SecurityService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -13,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
+@Log4j2
 @Service
 public class SecurityServiceImpl implements SecurityService {
 
@@ -26,7 +30,7 @@ public class SecurityServiceImpl implements SecurityService {
     private AuthenticationManager authenticationManager;
 
     @Override
-    public String register(UserRequest userRequest) {
+    public ResponseEntity<String> register(UserRequest userRequest) {
         User user = dtoToModel(userRequest);
 
         userRepository.save(user);
@@ -35,26 +39,36 @@ public class SecurityServiceImpl implements SecurityService {
     }
 
     @Override
-    public String getToken(UserRequest userRequest) {
+    public ResponseEntity<String> getToken(UserRequest userRequest) {
         Authentication authenticate = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(userRequest.getUsername(), userRequest.getPassword()));
 
         if (!authenticate.isAuthenticated()) {
-            throw new IllegalArgumentException("Invalid access");
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 
-        return JwtUtils.generateToken(userRequest.getUsername());
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(JwtUtils.generateToken(userRequest.getUsername()));
     }
 
     @Override
-    public void checkToken(String token) {
-        if (!token.startsWith("Bearer ")){
-            throw new IllegalArgumentException("Token does not start with \"Bearer \"");
+    public ResponseEntity<Void> checkToken(String token) {
+        if (token == null || !token.startsWith("Bearer ")){
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 
-        token = token.substring(7);
+        try {
+            JwtUtils.validateToken(token.substring(7));
+            log.debug("Validation correct");
+        } catch (Exception e) {
+            log.debug("Validation INCORRECT");
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
 
-        JwtUtils.validateToken(token);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .build();
     }
 
     private User dtoToModel(UserRequest userRequest) {

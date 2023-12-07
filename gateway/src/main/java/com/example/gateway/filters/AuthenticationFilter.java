@@ -1,12 +1,13 @@
 package com.example.gateway.filters;
 
+import com.example.gateway.exceptions.UnauthorizedException;
 import com.example.gateway.service.discovery.ServiceNames;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.*;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
@@ -16,14 +17,17 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 @RefreshScope
 @Component
+@Log
 public class AuthenticationFilter implements GatewayFilter {
 
     @Autowired
-    private WebClient webClient;
+    private WebClient.Builder webBuilder;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -31,19 +35,30 @@ public class AuthenticationFilter implements GatewayFilter {
         ServerHttpRequest request = exchange.getRequest();
 
         if (isAuthMissing(request)) {
+            log.info("CRAKA");
             return onError(exchange, HttpStatus.UNAUTHORIZED);
         }
 
         final String token = getAuthHeader(request);
-        final String url = "http://" + ServiceNames.SECURITY_SERVICE + "/api/security/checkToken" ;
+        final String url = "lb://" + ServiceNames.SECURITY_SERVICE + "/api/security/checkToken" ;
 
-        webClient
+        return webBuilder.build()
                 .get()
                 .uri(url)
                 .header(HttpHeaders.AUTHORIZATION, token)
-                .retrieve();
+                .retrieve()
+                .toEntity(Void.class)
+                .flatMap(response -> {
+                    // Handle the response asynchronously
+                    if (response == null || response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+                        log.info("Failed to authorize");
 
-        return chain.filter(exchange);
+                        return onError(exchange, HttpStatus.UNAUTHORIZED);
+                    }
+
+                    log.info("Authorized");
+                    return chain.filter(exchange);
+                });
     }
 
     @Override
@@ -59,6 +74,12 @@ public class AuthenticationFilter implements GatewayFilter {
     @Override
     public String shortcutFieldPrefix() {
         return GatewayFilter.super.shortcutFieldPrefix();
+    }
+
+    private HttpEntity<?> createRequestEntity(String token) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set(HttpHeaders.AUTHORIZATION, token);
+        return new HttpEntity<>(headers);
     }
 
 

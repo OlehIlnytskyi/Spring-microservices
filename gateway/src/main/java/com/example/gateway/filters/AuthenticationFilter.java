@@ -35,7 +35,7 @@ public class AuthenticationFilter implements GatewayFilter {
         ServerHttpRequest request = exchange.getRequest();
 
         if (isAuthMissing(request)) {
-            log.info("CRAKA");
+            log.info("No token");
             return onError(exchange, HttpStatus.UNAUTHORIZED);
         }
 

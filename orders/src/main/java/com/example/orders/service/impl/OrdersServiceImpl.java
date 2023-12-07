@@ -9,7 +9,10 @@ import com.example.orders.service.OrdersService;
 import com.example.orders.repository.OrdersRepository;
 import com.example.orders.service.discovery.ServicesNames;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
@@ -25,18 +28,26 @@ public class OrdersServiceImpl implements OrdersService {
     private RestTemplate restTemplate;
 
     @Override
-    public void post(OrderRequest orderRequest) {
+    public ResponseEntity<Void> post(OrderRequest orderRequest) {
 
         List<OrderItem> orderItems = orderRequest.getOrderItemRequests().stream()
                 .map(this::mapToBase)
                 .toList();
 
-        String url = "http://" + ServicesNames.HANGAR_SERVICE + "/api/hangar/get?machineId=";
+        String url = "lb://" + ServicesNames.HANGAR_SERVICE + "/api/hangar/get?machineId=";
 
-        orderItems.forEach(orderItem -> orderItem.setPrice(
-                restTemplate.getForObject(url + orderItem.getMachineId(), MachineResponse.class)
-                        .getPrice()
-        ));
+        try {
+            orderItems.forEach(orderItem -> orderItem.setPrice(
+                    restTemplate.getForEntity(
+                                    url + orderItem.getMachineId(), MachineResponse.class)
+                            .getBody()
+                            .getPrice()
+            ));
+        } catch (HttpClientErrorException e) {
+            return ResponseEntity
+                    .status(HttpStatus.NO_CONTENT)
+                    .build();
+        }
 
         Order order = Order.builder()
                 .customer_id(orderRequest.getCustomerId())
@@ -47,31 +58,47 @@ public class OrdersServiceImpl implements OrdersService {
                 .build();
 
         ordersRepository.save(order);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .build();
     }
 
     @Override
-    public OrderResponse get(Long orderId) {
+    public ResponseEntity<OrderResponse> get(Long orderId) {
         Order order = ordersRepository.findById(orderId)
                 .orElseThrow(() -> new IllegalArgumentException("Order with id " + orderId + " is missing."));
 
-        return OrderResponse.builder()
+        OrderResponse body = OrderResponse.builder()
                 .id(order.getId())
                 .customer_id(order.getCustomer_id())
                 .orderItems(order.getOrderItems())
                 .total(order.getTotal())
                 .build();
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(body);
     }
 
     @Override
-    public List<OrderResponse> getAll() {
-        return ordersRepository.findAll().stream()
+    public ResponseEntity<List<OrderResponse>> getAll() {
+        List<OrderResponse> body = ordersRepository.findAll().stream()
                 .map(this::mapToResponse)
                 .toList();
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(body);
     }
 
     @Override
-    public void delete(Long machineId) {
+    public ResponseEntity<Void> delete(Long machineId) {
         ordersRepository.deleteById(machineId);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .build();
     }
 
 

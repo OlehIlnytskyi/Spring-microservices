@@ -5,6 +5,7 @@ import com.example.orders.dto.OrderResponse;
 import com.example.orders.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,26 +18,22 @@ public class OrdersController {
     private OrdersService ordersService;
 
     @PostMapping("/post")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void post(@RequestBody OrderRequest orderRequest) {
-        ordersService.post(orderRequest);
+    public ResponseEntity<Void> post(@RequestBody OrderRequest orderRequest) {
+        return ordersService.post(orderRequest);
     }
 
     @GetMapping("/get")
-    @ResponseStatus(HttpStatus.FOUND)
-    public OrderResponse get(@RequestParam Long orderId) {
+    public ResponseEntity<OrderResponse> get(@RequestParam Long orderId) {
         return ordersService.get(orderId);
     }
 
     @GetMapping("/getAll")
-    @ResponseStatus(HttpStatus.OK)
-    public List<OrderResponse> getAll() {
+    public ResponseEntity<List<OrderResponse>> getAll() {
         return ordersService.getAll();
     }
 
     @DeleteMapping("/delete")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public void delete(@RequestParam Long orderId) {
-        ordersService.delete(orderId);
+    public ResponseEntity<Void> delete(@RequestParam Long orderId) {
+        return ordersService.delete(orderId);
     }
 }

@@ -6,6 +6,8 @@ import com.example.hangar.dto.MachineResponse;
 import com.example.hangar.repository.MachineRepository;
 import com.example.hangar.service.HangarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +19,7 @@ public class HangarServiceImpl implements HangarService {
     private MachineRepository machineRepository;
 
     @Override
-    public void post(MachineRequest machineRequest) {
+    public ResponseEntity<Void> post(MachineRequest machineRequest) {
         Machine machine = Machine.builder()
                 .type(machineRequest.getType())
                 .model(machineRequest.getModel())
@@ -25,31 +27,56 @@ public class HangarServiceImpl implements HangarService {
                 .build();
 
         machineRepository.save(machine);
-    }
 
-    @Override
-    public MachineResponse get(Long machineId) {
-        Machine machine = machineRepository.findById(machineId)
-                .orElseThrow(() -> new IllegalArgumentException("Machine with id " + machineId + " is missing in the Hangar."));
-
-        return MachineResponse.builder()
-                .id(machine.getId())
-                .type(machine.getType())
-                .model(machine.getModel())
-                .price(machine.getPrice())
+        return ResponseEntity
+                .status(HttpStatus.OK)
                 .build();
     }
 
     @Override
-    public List<MachineResponse> getAll() {
-        return machineRepository.findAll().stream()
+    public ResponseEntity<MachineResponse> get(Long machineId) {
+
+        return machineRepository.findById(machineId)
                 .map(this::mapToResponse)
-                .toList();
+                .map(body -> ResponseEntity.ok().body(body))
+
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+
+//        Optional<Machine> machineOptional = machineRepository.findById(machineId);
+//
+//        if (machineOptional.isEmpty()) {
+//            return ResponseEntity
+//                    .status(HttpStatus.NOT_FOUND)
+//                    .build();
+//        }
+//
+//        MachineResponse body = machineOptional
+//                .map(this::mapToResponse)
+//                .get();
+//
+//        return ResponseEntity
+//                .status(HttpStatus.OK)
+//                .body(body);
     }
 
     @Override
-    public void deleteById(Long machineId) {
+    public ResponseEntity<List<MachineResponse>> getAll() {
+        List<MachineResponse> body = machineRepository.findAll().stream()
+                .map(this::mapToResponse)
+                .toList();
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(body);
+    }
+
+    @Override
+    public ResponseEntity<Void> deleteById(Long machineId) {
         machineRepository.deleteById(machineId);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .build();
     }
 
     private MachineResponse mapToResponse(Machine machine) {

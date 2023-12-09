@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>hangar</artifactId>
+	<artifactId>hangar-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hangar</name>
 	<description>Hangar with army Vehicles</description>

@@ -7,21 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hangar" />
-        <module name="orders" />
-        <module name="security" />
+        <module name="orders-service" />
         <module name="eureka-server" />
-        <module name="gateway" />
+        <module name="hangar-service" />
+        <module name="gateway-service" />
+        <module name="security-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eureka-server" options="-parameters" />
-      <module name="gateway" options="-parameters" />
-      <module name="hangar" options="-parameters" />
-      <module name="orders" options="-parameters" />
-      <module name="security" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
+      <module name="hangar-service" options="-parameters" />
+      <module name="orders-service" options="-parameters" />
+      <module name="security-service" options="-parameters" />
     </option>
   </component>
 </project>

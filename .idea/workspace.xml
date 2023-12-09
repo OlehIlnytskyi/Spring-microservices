@@ -5,7 +5,82 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/src/main/java/com/example/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/src/main/java/com/example/gateway/configuration/GatewayConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/configuration/GatewayConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/src/main/java/com/example/gateway/exceptions/UnauthorizedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/exceptions/UnauthorizedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/src/main/java/com/example/gateway/filters/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/filters/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/src/main/java/com/example/gateway/service/discovery/ServiceNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/service/discovery/ServiceNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway/src/test/java/com/example/gateway/GatewayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/test/java/com/example/gateway/GatewayApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/java/com/example/hangar/HangarApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/HangarApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/java/com/example/hangar/controller/HangarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/controller/HangarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/java/com/example/hangar/dto/MachineRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/dto/MachineRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/java/com/example/hangar/dto/MachineResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/dto/MachineResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/java/com/example/hangar/model/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/model/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/java/com/example/hangar/model/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/model/MachineType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/java/com/example/hangar/repository/MachineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/repository/MachineRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/java/com/example/hangar/service/HangarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/HangarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/java/com/example/hangar/service/impl/HangarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/impl/HangarServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/test/java/com/example/hangar/HangarApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/HangarApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/test/java/com/example/hangar/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/TestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/OrdersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/OrdersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/config/OrdersConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/config/OrdersConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/controller/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/dto/MachineResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/MachineResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/dto/OrderItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderItemRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/dto/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/dto/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/model/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/model/MachineType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/repository/OrdersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/repository/OrdersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/OrdersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/service/discovery/ServicesNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/discovery/ServicesNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/src/test/java/com/example/orders/OrdersApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/OrdersApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/SecurityApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/SecurityApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/config/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/config/CustomUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/config/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/config/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/controller/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/controller/SecurityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/dto/UserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/dto/UserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/jwt/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/service/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/service/SecurityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/java/com/example/security/service/impl/SecurityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/service/impl/SecurityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security/src/test/java/com/example/security/SecurityApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/test/java/com/example/security/SecurityApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,27 +93,28 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2YGOxCri8M314UHcoMofGeDuwVV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "21",
-    "last_opened_file_path": "D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/microservices/security",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/microservices/security&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -60,7 +136,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.gateway.GatewayApplication" />
-      <module name="gateway" />
+      <module name="gateway-service" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -69,7 +145,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.hangar.HangarApplication" />
-      <module name="hangar" />
+      <module name="hangar-service" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,7 +154,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.orders.OrdersApplication" />
-      <module name="orders" />
+      <module name="orders-service" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,7 +163,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.security.SecurityApplication" />
-      <module name="security" />
+      <module name="security-service" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

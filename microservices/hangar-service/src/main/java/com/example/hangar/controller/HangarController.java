@@ -2,6 +2,7 @@ package com.example.hangar.controller;
 
 import com.example.hangar.dto.MachineRequest;
 import com.example.hangar.dto.MachineResponse;
+import com.example.hangar.dto.MachinesListResponse;
 import com.example.hangar.service.HangarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,7 @@ public class HangarController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<MachineResponse>> getAll() {
+    public ResponseEntity<MachinesListResponse> getAll() {
         return hangarService.getAll();
     }
 

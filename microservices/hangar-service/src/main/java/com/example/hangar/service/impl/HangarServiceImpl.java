@@ -1,10 +1,12 @@
 package com.example.hangar.service.impl;
 
+import com.example.hangar.dto.MachinesListResponse;
 import com.example.hangar.model.Machine;
 import com.example.hangar.dto.MachineRequest;
 import com.example.hangar.dto.MachineResponse;
 import com.example.hangar.repository.MachineRepository;
 import com.example.hangar.service.HangarService;
+import com.example.hangar.utils.MyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,35 +37,20 @@ public class HangarServiceImpl implements HangarService {
 
     @Override
     public ResponseEntity<MachineResponse> get(Long machineId) {
-
         return machineRepository.findById(machineId)
-                .map(this::mapToResponse)
+                .map(MyMapper::mapToResponse)
                 .map(body -> ResponseEntity.ok().body(body))
 
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
-
-//        Optional<Machine> machineOptional = machineRepository.findById(machineId);
-//
-//        if (machineOptional.isEmpty()) {
-//            return ResponseEntity
-//                    .status(HttpStatus.NOT_FOUND)
-//                    .build();
-//        }
-//
-//        MachineResponse body = machineOptional
-//                .map(this::mapToResponse)
-//                .get();
-//
-//        return ResponseEntity
-//                .status(HttpStatus.OK)
-//                .body(body);
     }
 
     @Override
-    public ResponseEntity<List<MachineResponse>> getAll() {
-        List<MachineResponse> body = machineRepository.findAll().stream()
-                .map(this::mapToResponse)
+    public ResponseEntity<MachinesListResponse> getAll() {
+        List<MachineResponse> machineResponses = machineRepository.findAll().stream()
+                .map(MyMapper::mapToResponse)
                 .toList();
+
+        MachinesListResponse body = new MachinesListResponse(machineResponses);
 
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -79,12 +66,4 @@ public class HangarServiceImpl implements HangarService {
                 .build();
     }
 
-    private MachineResponse mapToResponse(Machine machine) {
-        return MachineResponse.builder()
-                .id(machine.getId())
-                .type(machine.getType())
-                .model(machine.getModel())
-                .price(machine.getPrice())
-                .build();
-    }
 }

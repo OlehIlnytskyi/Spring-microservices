@@ -8,7 +8,10 @@ import com.example.orders.model.*;
 import com.example.orders.service.OrdersService;
 import com.example.orders.repository.OrdersRepository;
 import com.example.orders.service.discovery.ServicesNames;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Service
+@Log
 public class OrdersServiceImpl implements OrdersService {
 
     @Autowired
@@ -28,7 +32,8 @@ public class OrdersServiceImpl implements OrdersService {
     private RestTemplate restTemplate;
 
     @Override
-    public ResponseEntity<Void> post(OrderRequest orderRequest) {
+    @CircuitBreaker(name = "getMachinesById_cb", fallbackMethod = "postFallback")
+    public ResponseEntity<String> post(OrderRequest orderRequest) {
 
         List<OrderItem> orderItems = orderRequest.getOrderItemRequests().stream()
                 .map(this::mapToBase)
@@ -37,16 +42,16 @@ public class OrdersServiceImpl implements OrdersService {
         String url = "lb://" + ServicesNames.HANGAR_SERVICE + "/api/hangar/get?machineId=";
 
         try {
-            orderItems.forEach(orderItem -> orderItem.setPrice(
-                    restTemplate.getForEntity(
-                                    url + orderItem.getMachineId(), MachineResponse.class)
-                            .getBody()
-                            .getPrice()
-            ));
+            orderItems.forEach(orderItem -> {
+                orderItem.setPrice(
+                        getMachineResponse(url, orderItem.getMachineId())
+                                .getPrice()
+                );
+            });
         } catch (HttpClientErrorException e) {
             return ResponseEntity
                     .status(HttpStatus.NO_CONTENT)
-                    .build();
+                    .body("No Content");
         }
 
         Order order = Order.builder()
@@ -61,7 +66,19 @@ public class OrdersServiceImpl implements OrdersService {
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .build();
+                .body("Successfully created new Order");
+    }
+
+    private MachineResponse getMachineResponse(String url, Long machineId) {
+        return restTemplate.getForEntity(url + machineId, MachineResponse.class)
+                .getBody();
+    }
+
+
+    private ResponseEntity<String> postFallback(Exception e) {
+        return ResponseEntity
+                .status(HttpStatus.REQUEST_TIMEOUT)
+                .body("Oups, looks like something went wrong, please, give us some time to fix it :)");
     }
 
     @Override

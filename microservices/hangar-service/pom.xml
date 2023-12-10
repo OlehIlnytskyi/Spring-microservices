@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>hangar-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hangar</name>
+	<name>hangar-service</name>
 	<description>Hangar with army Vehicles</description>
 	<properties>
 		<java.version>17</java.version>

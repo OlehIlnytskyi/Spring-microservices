@@ -18,7 +18,7 @@ public class OrdersController {
     private OrdersService ordersService;
 
     @PostMapping("/post")
-    public ResponseEntity<Void> post(@RequestBody OrderRequest orderRequest) {
+    public ResponseEntity<String> post(@RequestBody OrderRequest orderRequest) {
         return ordersService.post(orderRequest);
     }
 

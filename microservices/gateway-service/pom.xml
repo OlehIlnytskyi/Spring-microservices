@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>gateway-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gateway</name>
+	<name>gateway-service</name>
 	<description>Spring Cloud Gateway</description>
 	<properties>
 		<java.version>17</java.version>

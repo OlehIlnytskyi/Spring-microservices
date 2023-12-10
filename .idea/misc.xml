@@ -5,10 +5,11 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/microservices/eureka-server/pom.xml" />
-        <option value="$PROJECT_DIR$/microservices/gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/microservices/hangar/pom.xml" />
+        <option value="$PROJECT_DIR$/microservices/gateway-service/pom.xml" />
+        <option value="$PROJECT_DIR$/microservices/hangar-service/pom.xml" />
+        <option value="$PROJECT_DIR$/microservices/orders-service/pom.xml" />
+        <option value="$PROJECT_DIR$/microservices/security-service/pom.xml" />
         <option value="$PROJECT_DIR$/microservices/orders/pom.xml" />
-        <option value="$PROJECT_DIR$/microservices/security/pom.xml" />
       </list>
     </option>
   </component>

@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/gateway/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/security/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/config/OrdersConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/config/OrdersConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/controller/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/OrdersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/security-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +30,7 @@
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
+  &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2YGOxCri8M314UHcoMofGeDuwVV" />
   <component name="ProjectViewState">
@@ -39,7 +44,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/microservices/security&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/microservices/orders&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -52,7 +57,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SecurityApplication">
+  <component name="RunManager" selected="Application.OrdersApplication">
     <configuration name="EurekaServerApplication" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -102,8 +107,8 @@
       <item itemvalue="Application.EurekaServerApplication" />
       <item itemvalue="Application.GatewayApplication" />
       <item itemvalue="Application.SecurityApplication" />
-      <item itemvalue="Application.HangarApplication" />
       <item itemvalue="Application.OrdersApplication" />
+      <item itemvalue="Application.HangarApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

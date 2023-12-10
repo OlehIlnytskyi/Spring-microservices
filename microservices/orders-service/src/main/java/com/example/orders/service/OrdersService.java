@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface OrdersService {
 
-    ResponseEntity<Void> post(OrderRequest orderRequest);
+    ResponseEntity<String> post(OrderRequest orderRequest);
 
     ResponseEntity<OrderResponse> get(Long orderId);
 

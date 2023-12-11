@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface HangarService {
-    ResponseEntity<Void> post(MachineRequest machineRequest);
+    ResponseEntity<Void> post(MachineRequest[] machineArrayRequest);
 
     ResponseEntity<MachineResponse> get(Long machineId);
 

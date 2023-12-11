@@ -55,6 +55,7 @@ public class OrdersServiceImpl implements OrdersService {
     }
 
     private ResponseEntity<String> postFallback(Exception e) {
+        log.info("Exception in post method - " +  e.getMessage());
         return ResponseEntity
                 .status(HttpStatus.REQUEST_TIMEOUT)
                 .body("Oops, looks like something went wrong, please, give us some time to fix it :)");

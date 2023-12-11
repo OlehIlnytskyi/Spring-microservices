@@ -18,8 +18,8 @@ public class HangarController {
     private HangarService hangarService;
 
     @PostMapping("/post")
-    public ResponseEntity<Void> post(@RequestBody MachineRequest machineRequest) {
-        return hangarService.post(machineRequest);
+    public ResponseEntity<Void> post(@RequestBody MachineRequest... machineArrayRequest) {
+        return hangarService.post(machineArrayRequest);
     }
 
     @GetMapping("/get")

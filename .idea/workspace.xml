@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/dto/MachinesListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/utils/MyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/MachinesListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/utils/MyMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/controller/HangarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/controller/HangarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/model/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/model/MachineType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/HangarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/HangarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/impl/HangarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/impl/HangarServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/discovery/ServicesNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/discovery/ServiceUrls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/utils/MyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/utils/ObjectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/model/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/model/MachineType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,21 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "21",
-    "last_directory_selection": "D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/microservices/hangar-service/src/main/java/com/example/hangar",
-    "last_opened_file_path": "D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/microservices/orders",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/microservices/hangar-service/src/main/java/com/example/hangar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaProjects/MyProjects/AnimeUa&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>

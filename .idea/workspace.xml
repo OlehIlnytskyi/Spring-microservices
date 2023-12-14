@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/controller/HangarControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/repository/MachineRepositoryTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/service/HangarServiceTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicatior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/configuration/GatewayConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/configuration/GatewayConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/filters/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/filters/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/controller/HangarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/controller/HangarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/dto/MachinesListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/dto/MachineResponseListWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/model/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/model/MachineType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/HangarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/HangarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/impl/HangarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/service/impl/HangarServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/utils/ObjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/main/java/com/example/hangar/utils/MachineMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/TestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicatior.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/MachinesListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/MachineResponseListWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/model/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/model/MachineType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

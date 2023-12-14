@@ -1,6 +1,6 @@
 package com.example.orders.service.impl;
 
-import com.example.orders.communication.OrdersCommunicatior;
+import com.example.orders.communication.OrdersCommunicator;
 import com.example.orders.dto.*;
 import com.example.orders.model.*;
 import com.example.orders.service.OrdersService;
@@ -24,7 +24,7 @@ public class OrdersServiceImpl implements OrdersService {
     private OrdersRepository ordersRepository;
 
     @Autowired
-    private OrdersCommunicatior ordersCommunicatior;
+    private OrdersCommunicator ordersCommunicator;
 
     @Override
     public ResponseEntity<String> post(OrderRequest orderRequest) {
@@ -91,7 +91,8 @@ public class OrdersServiceImpl implements OrdersService {
 
 
     private List<OrderItem> getOrderItems(OrderRequest orderRequest) {
-        List<MachineResponse> machines = ordersCommunicatior.getAllMachines();
+        List<MachineResponse> machines = ordersCommunicator.getAllMachinesInWrapper()
+                .getMachineResponses();
 
         return orderRequest.getOrderItemRequests().stream()
                 .map(MyMapper::mapToBase)

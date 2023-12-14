@@ -47,9 +47,4 @@ public class GatewayConfiguration {
         return WebClient.builder();
     }
 
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 }

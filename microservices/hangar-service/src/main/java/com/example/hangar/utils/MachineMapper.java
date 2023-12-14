@@ -4,7 +4,7 @@ import com.example.hangar.dto.MachineRequest;
 import com.example.hangar.dto.MachineResponse;
 import com.example.hangar.model.Machine;
 
-public class ObjectMapper {
+public class MachineMapper {
 
     public static MachineResponse mapToResponse(Machine machine) {
         return MachineResponse.builder()
@@ -12,6 +12,15 @@ public class ObjectMapper {
                 .type(machine.getType())
                 .model(machine.getModel())
                 .price(machine.getPrice())
+                .build();
+    }
+
+    public static Machine mapToBase(MachineResponse machineResponse) {
+        return Machine.builder()
+                .id(machineResponse.getId())
+                .type(machineResponse.getType())
+                .model(machineResponse.getModel())
+                .price(machineResponse.getPrice())
                 .build();
     }
 

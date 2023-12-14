@@ -2,17 +2,19 @@ package com.example.hangar.service;
 
 import com.example.hangar.dto.MachineRequest;
 import com.example.hangar.dto.MachineResponse;
-import com.example.hangar.dto.MachinesListResponse;
+import com.example.hangar.dto.MachineResponseListWrapper;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface HangarService {
-    ResponseEntity<Void> post(MachineRequest[] machineArrayRequest);
+    ResponseEntity<Void> addMachine(List<MachineRequest> machineArrayRequest);
 
-    ResponseEntity<MachineResponse> get(Long machineId);
+    ResponseEntity<MachineResponse> getMachineById(Long machineId);
 
-    ResponseEntity<MachinesListResponse> getAll();
+    ResponseEntity<MachineResponseListWrapper> getAllMachinesInWrapper();
 
-    ResponseEntity<Void> deleteById(Long machineId);
+    List<MachineResponse> getAllMachines();
+
+    ResponseEntity<Void> deleteMachineById(Long machineId);
 }

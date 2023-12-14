@@ -1,6 +1,5 @@
 package com.example.gateway.filters;
 
-import com.example.gateway.exceptions.UnauthorizedException;
 import com.example.gateway.service.discovery.ServiceNames;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.http.*;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
@@ -25,9 +23,6 @@ public class AuthenticationFilter implements GatewayFilter {
 
     @Autowired
     private WebClient.Builder webBuilder;
-
-    @Autowired
-    private RestTemplate restTemplate;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {

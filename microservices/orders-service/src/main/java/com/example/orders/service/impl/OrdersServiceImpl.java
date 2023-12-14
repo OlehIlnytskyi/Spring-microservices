@@ -1,25 +1,20 @@
 package com.example.orders.service.impl;
 
+import com.example.orders.communication.OrdersCommunicatior;
 import com.example.orders.dto.*;
 import com.example.orders.model.*;
 import com.example.orders.service.OrdersService;
 import com.example.orders.repository.OrdersRepository;
-import com.example.orders.service.discovery.ServiceUrls;
 import com.example.orders.utils.MyMapper;
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Function;
 
 @Service
 @Log
@@ -29,10 +24,9 @@ public class OrdersServiceImpl implements OrdersService {
     private OrdersRepository ordersRepository;
 
     @Autowired
-    private RestTemplate restTemplate;
+    private OrdersCommunicatior ordersCommunicatior;
 
     @Override
-    @CircuitBreaker(name = "getMachinesById_cb", fallbackMethod = "postFallback")
     public ResponseEntity<String> post(OrderRequest orderRequest) {
 
         List<OrderItem> orderItems;
@@ -97,20 +91,12 @@ public class OrdersServiceImpl implements OrdersService {
 
 
     private List<OrderItem> getOrderItems(OrderRequest orderRequest) {
-        List<MachineResponse> machines = getAllMachines();
+        List<MachineResponse> machines = ordersCommunicatior.getAllMachines();
 
         return orderRequest.getOrderItemRequests().stream()
                 .map(MyMapper::mapToBase)
                 .peek(orderItem -> orderItem.setPrice(extractPriceFromMachines(orderItem.getMachineId(), machines)))
                 .toList();
-    }
-
-    private List<MachineResponse> getAllMachines() throws NullPointerException {
-        String url = "lb://" + ServiceUrls.HANGAR_SERVICE + "/getAll";
-
-        return restTemplate.getForEntity(url, MachinesListResponse.class)
-                .getBody()
-                .getMachineResponses();
     }
 
     private BigDecimal extractPriceFromMachines(Long machineId, List<MachineResponse> machines) throws IllegalArgumentException {

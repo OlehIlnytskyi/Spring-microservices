@@ -1,5 +1,7 @@
 # Spring-microservices
 
+> Take a note: this README is deprecated! I have already implemented security, gateway, circuit breaker and tests. After implementing distributed tracing, kafka and dockerizing the project, i will update this README
+
 > This is a simple project that was created with a microservice architecture to learn and master the basic technologies when working with such an architecture.
 
 ## Why i created this project

@@ -2,6 +2,7 @@ package com.example.orders.controller;
 
 import com.example.orders.dto.OrderRequest;
 import com.example.orders.dto.OrderResponse;
+import com.example.orders.dto.OrderResponseListWrapper;
 import com.example.orders.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,7 +29,7 @@ public class OrdersController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<OrderResponse>> getAll() {
+    public ResponseEntity<OrderResponseListWrapper> getAll() {
         return ordersService.getAll();
     }
 

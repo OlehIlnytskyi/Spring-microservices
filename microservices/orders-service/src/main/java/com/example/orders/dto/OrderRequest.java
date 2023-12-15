@@ -14,5 +14,5 @@ import java.util.List;
 public class OrderRequest {
 
     private Long customerId;
-    private List<OrderItemRequest> orderItemRequests;
+    private List<OrderItemRequest> orderItemRequestList;
 }

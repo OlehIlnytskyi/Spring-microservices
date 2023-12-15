@@ -1,7 +1,6 @@
 package com.example.orders.dto;
 
 import com.example.orders.model.OrderItem;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +16,7 @@ import java.util.List;
 public class OrderResponse {
 
     private Long id;
-    private Long customer_id;
-    private List<OrderItem> orderItems;
+    private Long customerId;
+    private List<OrderItem> orderItemList;
     private BigDecimal total;
 }

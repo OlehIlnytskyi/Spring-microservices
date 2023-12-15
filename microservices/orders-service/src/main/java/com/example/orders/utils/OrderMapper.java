@@ -9,7 +9,7 @@ import com.example.orders.model.OrderItem;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class MyMapper {
+public class OrderMapper {
 
     public static Order mapToBase(OrderRequest orderRequest, List<OrderItem> orderItems) {
         return Order.builder()
@@ -30,8 +30,8 @@ public class MyMapper {
     public static OrderResponse mapToResponse(Order order) {
         return OrderResponse.builder()
                 .id(order.getId())
-                .customer_id(order.getCustomer_id())
-                .orderItems(order.getOrderItems())
+                .customerId(order.getCustomer_id())
+                .orderItemList(order.getOrderItems())
                 .total(order.getTotal())
                 .build();
     }

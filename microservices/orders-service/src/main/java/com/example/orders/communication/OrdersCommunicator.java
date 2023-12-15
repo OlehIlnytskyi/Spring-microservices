@@ -12,7 +12,7 @@ public class OrdersCommunicator {
     @Autowired
     private RestTemplate restTemplate;
 
-    public MachineResponseListWrapper getAllMachinesInWrapper() {
+    public MachineResponseListWrapper getAllMachinesFromHangar() {
         String url = "lb://" + ServiceUrls.HANGAR_SERVICE + "/getAll";
 
         return restTemplate.getForEntity(url, MachineResponseListWrapper.class)

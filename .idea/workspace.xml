@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponseListWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/TestUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/controller/OrdersControllerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/repository/OrdersRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/service/OrdersServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicatior.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/MachinesListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/MachineResponseListWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/model/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/model/MachineType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/service/HangarServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/service/HangarServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/controller/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/OrdersService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/utils/MyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/utils/OrderMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +74,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HangarControllerTests">
+  <component name="RunManager" selected="JUnit.HangarServiceTests">
     <configuration name="EurekaServerApplication" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -141,38 +150,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HangarServiceTests.getAllMachinesInWrapperShouldReturnWrapperWithValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hangar-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.hangar.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.hangar.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.hangar.service.HangarServiceTests" />
-      <option name="METHOD_NAME" value="getAllMachinesInWrapperShouldReturnWrapperWithValues" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HangarServiceTests.getAllShouldReturnMachinesListResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hangar-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.hangar.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.hangar.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.hangar.service.HangarServiceTests" />
-      <option name="METHOD_NAME" value="getAllShouldReturnMachinesListResponse" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MachineRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hangar-service" />
       <extension name="coverage">
@@ -188,25 +165,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrdersRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="orders-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.orders.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.orders.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.example.orders.repository.OrdersRepositoryTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdersServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="orders-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.orders.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.orders.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.orders.service.OrdersServiceTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.EurekaServerApplication" />
       <item itemvalue="Application.GatewayApplication" />
       <item itemvalue="Application.SecurityApplication" />
       <item itemvalue="Application.HangarApplication" />
       <item itemvalue="Application.OrdersApplication" />
-      <item itemvalue="JUnit.HangarServiceTests" />
-      <item itemvalue="JUnit.HangarServiceTests.getAllMachinesInWrapperShouldReturnWrapperWithValues" />
-      <item itemvalue="JUnit.HangarServiceTests.getAllShouldReturnMachinesListResponse" />
-      <item itemvalue="JUnit.MachineRepositoryTests" />
       <item itemvalue="JUnit.HangarControllerTests" />
+      <item itemvalue="JUnit.MachineRepositoryTests" />
+      <item itemvalue="JUnit.OrdersServiceTests" />
+      <item itemvalue="JUnit.OrdersRepositoryTests" />
+      <item itemvalue="JUnit.HangarServiceTests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HangarControllerTests" />
         <item itemvalue="JUnit.HangarServiceTests" />
+        <item itemvalue="JUnit.HangarControllerTests" />
         <item itemvalue="JUnit.MachineRepositoryTests" />
-        <item itemvalue="JUnit.HangarServiceTests.getAllMachinesInWrapperShouldReturnWrapperWithValues" />
-        <item itemvalue="JUnit.HangarServiceTests.getAllShouldReturnMachinesListResponse" />
+        <item itemvalue="JUnit.OrdersServiceTests" />
+        <item itemvalue="JUnit.OrdersRepositoryTests" />
       </list>
     </recent_temporary>
   </component>

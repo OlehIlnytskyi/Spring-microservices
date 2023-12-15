@@ -5,7 +5,7 @@ import com.example.orders.dto.*;
 import com.example.orders.model.*;
 import com.example.orders.service.OrdersService;
 import com.example.orders.repository.OrdersRepository;
-import com.example.orders.utils.MyMapper;
+import com.example.orders.utils.OrderMapper;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,7 +39,7 @@ public class OrdersServiceImpl implements OrdersService {
                     .body("No Content");
         }
 
-        Order order = MyMapper.mapToBase(orderRequest, orderItems);
+        Order order = OrderMapper.mapToBase(orderRequest, orderItems);
 
         ordersRepository.save(order);
 
@@ -59,7 +59,7 @@ public class OrdersServiceImpl implements OrdersService {
     @Override
     public ResponseEntity<OrderResponse> get(Long orderId) {
         OrderResponse body = ordersRepository.findById(orderId)
-                .map(MyMapper::mapToResponse)
+                .map(OrderMapper::mapToResponse)
                 .orElseThrow(() -> new IllegalArgumentException("Order with id " + orderId + " is missing."));
 
         return ResponseEntity
@@ -69,10 +69,12 @@ public class OrdersServiceImpl implements OrdersService {
 
 
     @Override
-    public ResponseEntity<List<OrderResponse>> getAll() {
-        List<OrderResponse> body = ordersRepository.findAll().stream()
-                .map(MyMapper::mapToResponse)
+    public ResponseEntity<OrderResponseListWrapper> getAll() {
+        List<OrderResponse> orderResponseList = ordersRepository.findAll().stream()
+                .map(OrderMapper::mapToResponse)
                 .toList();
+
+        OrderResponseListWrapper body = OrderResponseListWrapper.of(orderResponseList);
 
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -91,11 +93,11 @@ public class OrdersServiceImpl implements OrdersService {
 
 
     private List<OrderItem> getOrderItems(OrderRequest orderRequest) {
-        List<MachineResponse> machines = ordersCommunicator.getAllMachinesInWrapper()
+        List<MachineResponse> machines = ordersCommunicator.getAllMachinesFromHangar()
                 .getMachineResponses();
 
-        return orderRequest.getOrderItemRequests().stream()
-                .map(MyMapper::mapToBase)
+        return orderRequest.getOrderItemRequestList().stream()
+                .map(OrderMapper::mapToBase)
                 .peek(orderItem -> orderItem.setPrice(extractPriceFromMachines(orderItem.getMachineId(), machines)))
                 .toList();
     }

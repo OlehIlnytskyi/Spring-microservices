@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponseListWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/TestUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/controller/OrdersControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/repository/OrdersRepositoryTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/service/OrdersServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/service/HangarServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/service/HangarServiceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/controller/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/OrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/utils/MyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/utils/OrderMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +35,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;last_directory_selection&quot;: &quot;D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/microservices/gateway-service/src/main/java/com/example/gateway&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "last_directory_selection": "D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar/microservices/gateway-service/src/main/java/com/example/gateway",
+    "last_opened_file_path": "D:/JavaProjects/MyProjects/Spring/spring-cloud-microservices-military-hangar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.hangar.controller" />

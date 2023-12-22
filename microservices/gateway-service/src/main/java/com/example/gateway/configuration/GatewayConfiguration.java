@@ -28,14 +28,14 @@ public class GatewayConfiguration {
                 .route("hangar-service-route", r -> r
                         .path("/hangar/**")
                         .filters(f -> f
-//                                .filter(authenticationFilter)
+                                .filter(authenticationFilter)
                                 .rewritePath("/hangar/(?<segment>.*)", "/api/hangar/${segment}"))
                         .uri("lb://hangar-service"))
 
                 .route("orders-service-route", r -> r
                         .path("/orders/**")
                         .filters(f -> f
-//                                .filter(authenticationFilter)
+                                .filter(authenticationFilter)
                                 .rewritePath("/orders/(?<segment>.*)", "/api/orders/${segment}"))
                         .uri("lb://orders-service"))
                 .build();

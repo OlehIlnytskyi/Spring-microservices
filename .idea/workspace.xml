@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponseListWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/TestUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/controller/OrdersControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/repository/OrdersRepositoryTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/orders-service/src/test/java/com/example/orders/service/OrdersServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/service/HangarServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/hangar-service/src/test/java/com/example/hangar/service/HangarServiceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/communication/OrdersCommunicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/controller/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/dto/OrderResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/OrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/service/impl/OrdersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/utils/MyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders-service/src/main/java/com/example/orders/utils/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/configuration/GatewayConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/configuration/GatewayConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/gateway-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

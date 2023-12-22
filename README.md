@@ -55,14 +55,14 @@ Let's take a closer look at these microservices and the technologies they implem
 
 Suppose we want to order several machines. For that, we need some machines to be present in Hangar service. Let's check if we have some. We`ll use /hangar/getAll endpoint:
 
-<img src="media/hangar/postman_hangar_getAll_unauthorized">
+<img src="media/hangar/postman_hangar_getAll_unauthorized.png">
 
 As we can see, we got response UNAUTHORIZED. That means, that we didn't pass the security guard of our application.
 
 
 To do so, we have to get JWT token first. Let's get it using /security/register endpoint:
 
-<img src="media/security/postman_security_register">
+<img src="media/security/postman_security_register.png">
 
 
 Now we have JWT token to access application!
@@ -74,22 +74,22 @@ Now, let's check if we can see if we have any machines in Hangar:
 
 > To use JWT token, select Authorization tab, then Bearer Token type and paste your token
 
-<img src="media/hangar/postman_hangar_getAll">
+<img src="media/hangar/postman_hangar_getAll.png">
 
 Finally! We got acces to application!
 
 Note that you'll get an empty array in response because you hasn't added any machines to Hangar. To do so, send next request to hangar/post endpoint. Body text you`ll find in data/hangarMachines.txt file, and dont forget token!
 
-<img src="media/hangar/postman_hangar_post">
+<img src="media/hangar/postman_hangar_post.png">
 
 
 Now let's make an Order. We can do whis through orders/post andpoint:
 
-<img src="media/orders/postman_orders_post">
+<img src="media/orders/postman_orders_post.png">
 
 Let's check our new order:
 
-<img src="media/orders/postman_orders_getAll">
+<img src="media/orders/postman_orders_getAll.png">
 
 Note that you should see different results because i have already been testing application and created some orders.
 

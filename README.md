@@ -1,8 +1,348 @@
 # Spring-microservices
 
-> Take a note: this README is deprecated! I have already implemented security, gateway, circuit breaker and tests. After implementing distributed tracing, kafka and dockerizing the project, i will update this README
+> NOTE!!! THIS REAME IS NOT FINISHED, TOMMOROW (23.12.2023) I WILL FINISH IT!!!
 
-> This is a simple project that was created with a microservice architecture to learn and master the basic technologies when working with such an architecture.
+## Content
+- Briefly about the project
+- Quick overview
+- Usage examples
+- Technologies used
+  - Spring Boot
+  - Lombok
+  - Spring Data JPA
+  - Eureka
+  - Spring Cloud Gateway
+  - Spring Security with JWT authorization
+  - Circuit Breaker
+- Tests
+  - MockMVC
+- Conclusion
+
+## Briefly about the project
+
+This is a simple project that was created with a microservice architecture to learn and master the basic technologies when working with such an architecture. I provided explanation for main concepts that were used to create this project///
+
+## Quick overview
+
+From user perspective, project provides:
+- CRUD operations for Military Machines
+- CRUD operations for Orders
+
+> CRUD stands for basic operations with entities namely Create, Read, Update and Delete
+
+Let's look at the application scheme:
+
+![](media/project_scheme.png)
+
+Let's take a closer look at these microservices and the technologies they implement:
+
+- Hangar Service and Orders Service - REST applications
+    - Spring Data JPA
+    - Eureka Client
+      
+- Eureka Server - service discovery
+    - Eureka Server
+      
+- Gateway Service - Spring Cloud Gateway
+    - Spring Cloud Gateway
+      
+- Security Service - application guardian
+    - Spring Security
+    - JWT authorization
+
+
+## Usage examples
+
+Suppose we want to order several machines. For that, we need some machines to be present in Hangar service. Let's check if we have some. We`ll use /hangar/getAll endpoint:
+
+<img src="media/hangar/postman_hangar_getAll_unauthorized">
+
+As we can see, we got response UNAUTHORIZED. That means, that we didn't pass the security guard of our application.
+
+
+To do so, we have to get JWT token first. Let's get it using /security/register endpoint:
+
+<img src="media/security/postman_security_register">
+
+
+Now we have JWT token to access application!
+
+> Be careful, if you'll look deeper into code you'll see that these tokens have an expiration date. In this project it's set to 1000 * 60 * 30 miliseconds that equals 30 minutes.
+
+
+Now, let's check if we can see if we have any machines in Hangar:
+
+> To use JWT token, select Authorization tab, then Bearer Token type and paste your token
+
+<img src="media/hangar/postman_hangar_getAll">
+
+Finally! We got acces to application!
+
+Note that you'll get an empty array in response because you hasn't added any machines to Hangar. To do so, send next request to hangar/post endpoint. Body text you`ll find in data/hangarMachines.txt file, and dont forget token!
+
+<img src="media/hangar/postman_hangar_post">
+
+
+Now let's make an Order. We can do whis through orders/post andpoint:
+
+<img src="media/orders/postman_orders_post">
+
+Let's check our new order:
+
+<img src="media/orders/postman_orders_getAll">
+
+Note that you should see different results because i have already been testing application and created some orders.
+
+Now let's switch to implementation details.
+
+
+## Technologies used
+
+### Spring Boot
+
+Spring Boot excels in the development of web services and microservices architecture. Its design is particularly well-suited for building scalable and modular applications, making it a popular choice for creating robust and efficient backend services. With built-in support for microservices patterns and easy integration with Spring Cloud, Spring Boot simplifies the development and deployment of distributed systems.
+
+Links:
+ - [Official documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
+ - [Great video for beginners](https://www.youtube.com/watch?v=Nv2DERaMx-4&list=LL&index=27&t=17004s)
+
+### Lombok
+
+Lombok is a Java library that reduces boilerplate code by offering annotations to automatically generate common code structures, like getters and setters, during compilation. It simplifies code and improves readability by eliminating the need for manual coding of repetitive tasks, fostering cleaner and more concise Java code.
+
+For example, class MachineRequest from this project, that was written using Lombok:
+
+```java
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class MachineRequest {
+    private MachineType type;
+    private String model;
+    private BigDecimal price;
+}
+```
+
+And here's how we would write this class without Lombok
+
+```java
+public class MachineRequest {
+    private MachineType type;
+    private String model;
+    private BigDecimal price;
+    
+    public MachineRequest() {
+        
+    }
+
+    public MachineRequest(MachineType type, String model, BigDecimal price) {
+        this.type = type;
+        this.model = model;
+        this.price = price;
+    }
+
+    public MachineType getType() {
+        return type;
+    }
+
+    public void setType(MachineType type) {
+        this.type = type;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MachineRequest that)) return false;
+        return type == that.type && Objects.equals(model, that.model) && Objects.equals(price, that.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, model, price);
+    }
+
+    @Override
+    public String toString() {
+        return "MachineRequest{" +
+                "type=" + type +
+                ", model='" + model + '\'' +
+                ", price=" + price +
+                '}';
+    }
+}
+```
+
+The result is clearly visible.
+
+Links:
+- [Official documentation](https://projectlombok.org/features/)
+- [Introduction to Project Lombok](https://www.baeldung.com/intro-to-project-lombok)
+
+### Spring Data JPA
+
+Spring Data JPA simplifies database access in Spring applications by providing a repository-based abstraction over JPA. It streamlines data operations, supports query methods, and enhances code efficiency when interacting with relational databases.
+
+Usages in project:
+
+- Entity classes
+```java
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+
+@Entity
+@Table(name = "machine")
+public class Machine {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Enumerated(EnumType.STRING)
+    private MachineType type;
+
+    private String model;
+    private BigDecimal price;
+}
+
+```
+
+- JpaRepositories
+```java
+@Repository
+public interface MachineRepository extends JpaRepository<Machine, Long> {
+
+}
+```
+
+Fun fact about Repository that we don't need to implement methods to access data. Hibernate generates code automatically. /// NEED MOREINFO
+
+Links:
+- [Official documentation](https://spring.io/projects/spring-data-jpa/)
+- [Introduction to Spring Data JPA](https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa)
+
+### Eureka
+
+Eureka is a service discovery tool for microservices. It allows services to register and discover each other dynamically, enhancing communication in distributed systems by providing a central registry server.
+
+- Eureka server
+```java
+@EnableEurekaServer
+@SpringBootApplication
+public class EurekaServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EurekaServerApplication.class, args);
+	}
+
+}
+```
+
+- Eureka client
+```java
+<dependency>
+   <groupId>org.springframework.cloud</groupId>
+   <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+```
+
+### Spring Cloud Gateway
+
+Spring Cloud Gateway is a robust API gateway built on Spring WebFlux. It simplifies routing, filtering, and load balancing for microservices, offering flexibility and easy configuration in managing API traffic.
+
+- Gateway configuration
+```java
+ @Bean
+ public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+     return builder.routes()
+             .route("security-service-route", r -> r
+                     .path("/security/**")
+                     .filters(f -> f
+                             .rewritePath("/security/(?<segment>.*)", "/api/security/${segment}"))
+                     .uri("lb://security-service")
+             )
+             .route("hangar-service-route", r -> r
+                     .path("/hangar/**")
+                     .filters(f -> f
+                             .filter(authenticationFilter)
+                             .rewritePath("/hangar/(?<segment>.*)", "/api/hangar/${segment}"))
+                     .uri("lb://hangar-service"))
+
+             .route("orders-service-route", r -> r
+                     .path("/orders/**")
+                     .filters(f -> f
+                             .filter(authenticationFilter)
+                             .rewritePath("/orders/(?<segment>.*)", "/api/orders/${segment}"))
+                     .uri("lb://orders-service"))
+             .build();
+ }
+```
+
+
+### Spring Security with JWT authorization
+
+Spring Security with JWT authorization enables secure authentication and authorization in Java applications. It uses JSON Web Tokens for stateless authentication, issuing tokens upon login for subsequent authorization. This approach enhances security and scalability, particularly in distributed and microservices architectures.
+
+- Class that creates and validates JWT tokens
+```java
+public class JwtUtils {
+
+    public static final String SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
+
+
+    public static void validateToken(final String token) {
+        Jwts.parserBuilder()
+                .setSigningKey(getSignKey())
+                .build()
+                .parseClaimsJws(token);
+    }
+
+
+    public static String generateToken(String userName) {
+        Map<String, Object> claims = new HashMap<>();
+        return createToken(claims, userName);
+    }
+
+    private static String createToken(Map<String, Object> claims, String userName) {
+        return Jwts
+                .builder()
+                .setClaims(claims)
+                .setSubject(userName)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30))
+                .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
+    }
+
+    private static Key getSignKey() {
+        byte[] keyBytes = Decoders.BASE64.decode(SECRET);
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
+}
+```
+
+### Circuit Breaker
+
+/// ADD EXAMPLES HERE
+
+///////////////////////// OLD
 
 ## Why i created this project
 

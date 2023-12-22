@@ -1,7 +1,6 @@
 package com.example.gateway.filters;
 
 import com.example.gateway.service.discovery.ServiceNames;
-import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
@@ -18,7 +17,6 @@ import java.util.List;
 
 @RefreshScope
 @Component
-@Log
 public class AuthenticationFilter implements GatewayFilter {
 
     @Autowired
@@ -30,7 +28,6 @@ public class AuthenticationFilter implements GatewayFilter {
         ServerHttpRequest request = exchange.getRequest();
 
         if (isAuthMissing(request)) {
-            log.info("No token");
             return onError(exchange, HttpStatus.UNAUTHORIZED);
         }
 
@@ -44,14 +41,11 @@ public class AuthenticationFilter implements GatewayFilter {
                 .retrieve()
                 .toEntity(Void.class)
                 .flatMap(response -> {
-                    // Handle the response asynchronously
                     if (response == null || response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
-                        log.info("Failed to authorize");
 
                         return onError(exchange, HttpStatus.UNAUTHORIZED);
                     }
 
-                    log.info("Authorized");
                     return chain.filter(exchange);
                 });
     }

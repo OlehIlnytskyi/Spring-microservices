@@ -5,7 +5,6 @@ import com.example.security.jwt.JwtUtils;
 import com.example.security.models.User;
 import com.example.security.repository.UserRepository;
 import com.example.security.service.SecurityService;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +15,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
-@Log4j2
 @Service
 public class SecurityServiceImpl implements SecurityService {
 
@@ -60,9 +58,7 @@ public class SecurityServiceImpl implements SecurityService {
 
         try {
             JwtUtils.validateToken(token.substring(7));
-            log.debug("Validation correct");
         } catch (Exception e) {
-            log.debug("Validation INCORRECT");
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 

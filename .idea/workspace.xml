@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee24ad3-f28c-4f90-9ece-4c80f81c0ca4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/hangarMachines.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/filters/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/gateway-service/src/main/java/com/example/gateway/filters/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/service/impl/SecurityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/security-service/src/main/java/com/example/security/service/impl/SecurityServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
